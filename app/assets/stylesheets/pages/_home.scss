@@ -1,1 +1,31 @@
-// Specific CSS for your home-page
+.homepage {
+  background-image: image-url("home-sonhorama.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 20px;
+
+
+  .slogan {
+    position: absolute;
+    // top: 10px; // adjust this value according to your desired position
+    width: 100%;
+    text-align: center;
+    z-index: 2; // make sure the slogan is in front of the background image
+    white-space: nowrap;
+    margin-top: 10px;
+
+
+    h1 {
+      font-family: "Garamond Nova Cond L";
+      color: white;
+      font-size: 10.3vw; // adjust the font size as needed
+      font-weight: 500;
+      text-transform: uppercase;
+      // letter-spacing: 0.1em; // adjust the letter spacing as needed
+      margin: 0;
+
+    }
+  }
+}

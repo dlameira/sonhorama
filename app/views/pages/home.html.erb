@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage">
+  <div class="slogan">
+    <h1>BUILDING NEW REALITIES</h1>
+  </div>
+</div>
+
+<script>
+  // Get the width of the p element
+  const newsTickerTextWidth = document.getElementById('news-ticker-text').offsetWidth;
+
+  // Set the width of the news-ticker element to be the same
+  document.querySelector('.news-ticker').style.width = `${newsTickerTextWidth}px`;
+</script>
