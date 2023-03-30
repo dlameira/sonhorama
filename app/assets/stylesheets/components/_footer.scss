@@ -1,0 +1,43 @@
+.footer {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  overflow: hidden;
+  height: 50px;
+
+  .news-ticker {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 50px;
+    width: max-content;
+
+
+    p {
+      color: black;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: 59s scrollText linear infinite;
+      animation-fill-mode: forwards;
+      animation-delay: -20s;
+    }
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
