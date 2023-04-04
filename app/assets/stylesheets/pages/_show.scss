@@ -1,17 +1,43 @@
 .containershow {
   background-color: black;
   color: white;
+  padding: 0 20px;
 
   h1 {
     color: white;
+    font-family: 'Garamond Nova Cond L';
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-weight: 300;
+    margin-top: 0px;
+    padding-top: 0px;
   }
 
+}
+.project-banner{
+  max-width: 100%;
+}
+
+.project-description{
+  font-size: 1.25rem;
+  font-weight: light;
+  margin-top: 20px;
+  font-family: "Replica";
+}
+
+.project-details{
+  text-transform: uppercase;
+  margin: 0px;
+  color: rgb(215, 215, 215);
+}
+.project-images-container{
+  padding-bottom: 100px;
 }
 
 .project-images {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
+  grid-gap: 15px;
   margin-bottom: 5px;
 }
 
