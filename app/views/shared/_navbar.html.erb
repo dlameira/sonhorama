@@ -1,6 +1,8 @@
 <nav class="navbar">
 <div class="container">
     <%= link_to "PROJECTS", projects_path, class: "nav-link left" %>
-    <span class="nav-link right">SONHORAMA</span>
+    <%= link_to about_path do %>
+      <span class="nav-link right">SONHORAMA</span>
+    <% end %>
   </div>
 </nav>
