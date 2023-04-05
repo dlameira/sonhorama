@@ -1,8 +1,26 @@
 .index-projects{
   padding-top: 100px;
   background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .index-thumbs{
-  max-width: 30%;
+  max-width: 100%;
+}
+
+@media (max-width: 900px)
+{
+  .index-projects
+   {
+    grid-template-columns: 1fr 1fr;
+   }
+}
+
+@media (max-width: 600px)
+{
+  .index-projects
+   {
+    grid-template-columns: 1fr ;
+   }
 }
