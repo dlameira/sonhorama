@@ -1,6 +1,7 @@
-<div class="container">
+<div class=" form-container">
 
   <%= form_with model: @project, local: true do |form| %>
+
     <div class="form-group">
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control" %>
@@ -51,6 +52,10 @@
       <%= form.file_field :detail_images, multiple: true, class: "form-control" %>
     </div>
 
-    <%= form.submit "Save", class: "btn btn-primary" %>
+    <div class="botao">
+      <%= form.submit "Save", class: "btn btn-primary" %>
+    </div>
+
   <% end %>
+
 </div>
