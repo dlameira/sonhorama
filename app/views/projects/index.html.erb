@@ -1,15 +1,11 @@
-<div class="container-fluid index-projects">
+<div class="containerindex">
 
-  <div class="row">
-    <div class="col">
-      <%= link_to project_path(@projects.first) do  %>
-        <%= image_tag @projects.first.thumbnail, class:'index-thumbs' %>
+  <div class="container-fluid index-projects">
+    <% @projects.each do |project| %>
+      <%= link_to project_path(project) do  %>
+        <%= image_tag project.thumbnail, class:'index-thumbs' %>
       <% end %>
-    </div>
-
-     <div class="col">
-      <%= image_tag @projects.first.thumbnail, class:'index-thumbs' %>
-    </div>
+    <%end%>
   </div>
 
 </div>
