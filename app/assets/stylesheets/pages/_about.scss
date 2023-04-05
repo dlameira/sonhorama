@@ -1,0 +1,90 @@
+.container-sonhorama{
+  padding: 25px;
+  background-color: black;
+
+    p{
+      color: #E2E1E2;
+      font-family: "Replica";
+      font-weight: light;
+      font-size: 20px;
+      margin-top: 8px;
+    }
+
+    .about-sonhorama{
+      padding-right: 160px;
+    }
+
+}
+
+.about-cover{
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about-title{
+  font-family: "Garamond Nova Cond L";
+  color: #E2E1E2;
+  text-transform: uppercase;
+  font-size: 9.89vw;
+  margin: 10px 0;
+  padding: 0;
+  line-height: .9;
+}
+
+@media (max-width: 1200px)
+{
+  .about-title
+   {
+    font-size: 9.85vw;
+   }
+}
+
+@media (max-width: 1100px)
+{
+  .about-title
+   {
+    font-size: 9.78vw;
+   }
+}
+
+@media (max-width: 950px)
+{
+  .about-title
+   {
+    font-size: 9.6vw;
+   }
+}
+
+@media (max-width: 850px)
+{
+  .about-title
+   {
+    font-size: 9.5vw;
+   }
+}
+
+@media (max-width: 750px)
+{
+  .about-title
+   {
+    font-size: 9.3vw;
+   }
+}
+
+@media (max-width: 650px)
+{
+  .about-title
+   {
+    font-size: 9.1vw;
+   }
+}
+
+@media (max-width: 550px)
+{
+  .about-title
+   {
+    font-size: 13vw;
+   }
+}
