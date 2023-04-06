@@ -2,7 +2,7 @@
 
 
   <% if @project.banner.attached? %>
-   <%= image_tag @project.banner, class:'about-cover' %>
+   <%= cl_image_tag @project.banner, class:'about-cover' %>
   <% end %>
 
   <div class="row my-3">
@@ -28,7 +28,7 @@
       <div class="project-images" style="grid-template-columns: repeat(<%= images_in_row.count %>, 1fr)">
         <% images_in_row.each do |image| %>
           <div>
-            <%= image_tag image, class: "project-image" %>
+            <%= cl_image_tag image, class: "project-image" %>
           </div>
         <% end %>
       </div>
