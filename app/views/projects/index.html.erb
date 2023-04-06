@@ -4,10 +4,13 @@
 
     <% @projects.each do |project| %>
 
-      <%= link_to project_path(project) do  %>
-        <%= image_tag project.thumbnail, class:'index-thumbs' %>
-      <% end %>
+      <% if project %>
 
+        <%= link_to project_path(project) do  %>
+          <%= image_tag project.thumbnail, class:'index-thumbs' %>
+        <% end %>
+
+      <% end %>
     <%end%>
 
   </div>
