@@ -4,7 +4,7 @@
 
     <% @projects.each do |project| %>
 
-      <% if project %>
+      <% if project.present? %>
 
         <%= link_to project_path(project) do  %>
           <%= image_tag project.thumbnail, class:'index-thumbs' %>
