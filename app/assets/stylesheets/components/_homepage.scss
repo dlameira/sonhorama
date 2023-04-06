@@ -1,12 +1,15 @@
 .index-projects{
   padding-top: 100px;
-  background-color: black;
+  background-color: rgb(214, 106, 106);
   display: grid;
+  gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 80px;
 }
 
 .index-thumbs{
   max-width: 100%;
+  padding: 20px;
 }
 
 @media (max-width: 900px)
@@ -14,6 +17,8 @@
   .index-projects
    {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
    }
 }
 
@@ -22,5 +27,6 @@
   .index-projects
    {
     grid-template-columns: 1fr ;
+    padding: 10px;
    }
 }
