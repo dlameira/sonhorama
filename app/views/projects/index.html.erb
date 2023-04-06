@@ -1,18 +1,15 @@
-<div class="containerindex">
+<div class="index-projects container-fluid">
 
-  <div class="container-fluid index-projects">
+  <% @projects.each do |project| %>
 
-    <% @projects.each do |project| %>
+    <% if project.present? %>
 
-      <% if project.present? %>
-
-        <%= link_to project_path(project) do  %>
-          <%= image_tag project.thumbnail, class:'index-thumbs' %>
-        <% end %>
-
+      <%= link_to project_path(project) do  %>
+        <%= image_tag project.thumbnail, class:'index-thumbs' %>
       <% end %>
-    <%end%>
 
-  </div>
+    <% end %>
+
+  <%end%>
 
 </div>
