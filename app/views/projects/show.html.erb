@@ -35,7 +35,9 @@
 
     <% end %>
 
-    <%= link_to "edit", edit_project_path(@project), class:'btn btn-primary'%>
+    <% if (user_signed_in?) %>
+      <%= link_to "edit", edit_project_path(@project), class:'btn btn-primary'%>
+    <% end %>
   </div>
 
 

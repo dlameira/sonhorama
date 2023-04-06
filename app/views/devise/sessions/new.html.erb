@@ -12,9 +12,10 @@
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
-    <div class="form-actions botao">
+    <div class="form-actions botao" data-no-turbolink>
       <%= f.button :submit, "Log in" , class:'btn btn-secondary'%>
     </div>
+
   <% end %>
 
   <%= render "devise/shared/links" %>
