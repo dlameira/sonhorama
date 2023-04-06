@@ -2,21 +2,22 @@
 
 
   <% if @project.banner.attached? %>
-   <%= image_tag @project.banner, class:'project-banner' %>
+   <%= image_tag @project.banner, class:'about-cover' %>
   <% end %>
 
-  <div class="row">
+  <div class="row my-3">
+
     <div class="col-md-6">
       <h1><%= @project.title %></h1>
     </div>
 
     <div class="col-md-6 project-description">
       <p><%= @project.description %></p>
-
       <p class="project-details">cliente: <%= @project.client %></p>
       <p class="project-details">ano: <%= @project.date %></p>
       <p class="project-details">colaboradores: <%= @project.collaborators %></p>
     </div>
+
   </div>
 
   <div class="project-images-container">
@@ -33,6 +34,11 @@
       </div>
 
     <% end %>
+
+    <% if (user_signed_in?) %>
+      <%= link_to "edit", edit_project_path(@project), class:'btn btn-primary'%>
+    <% end %>
   </div>
+
 
 </div>

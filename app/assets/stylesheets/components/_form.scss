@@ -1,0 +1,38 @@
+.form-container{
+  color: white;
+  margin: 5rem auto;
+  max-width: 500px;
+
+  label{
+    font-size: 1.25rem;
+  }
+
+  textarea{
+    margin-bottom: 12px;
+    border-radius: 15px;
+  }
+
+  input{
+    margin-bottom: 12px;
+    border-radius: 15px;
+  }
+
+  .form-group{
+    width: 100%;
+  }
+
+  .botao{
+    text-align: center;
+    width: 100%;
+
+    input{
+      width: 200px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      background-color: rgb(15, 15, 15);
+    }
+  }
+
+}

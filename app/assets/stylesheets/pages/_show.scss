@@ -15,7 +15,9 @@
 
 }
 .project-banner{
-  max-width: 100%;
+  max-width: 100vw;
+  height: 600px;
+  object-fit: cover;
 }
 
 .project-description{
@@ -23,6 +25,7 @@
   font-weight: light;
   margin-top: 20px;
   font-family: "Replica";
+  padding-right: 10%;
 }
 
 .project-details{
