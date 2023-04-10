@@ -12,11 +12,7 @@ local:
 
 cloudinary:
   service: Cloudinary
-  cloud_name: djkudqafd
-  api_key: 731875733418126
-  api_secret: 4amBiUQrMKVhqTDWT5h5lAjLhHI
-  use_filename: true
-  unique_filename: false
+
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
