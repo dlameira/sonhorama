@@ -15,9 +15,9 @@
     </div>
 
     <div class="col-md-6 project-description">
-      <%= @project.content %>
-      <p class="project-details">cliente: <%= @project.client %></p>
-      <p class="project-details">ano: <%= @project.date %></p>
+      <%= @project.content%>
+      <p class="project-details client">cliente: <%= @project.client %></p>
+      <p class="project-details">ano: <%= @project.date.year %></p>
       <p class="project-details">colaboradores: <%= @project.collaborators %></p>
     </div>
 
