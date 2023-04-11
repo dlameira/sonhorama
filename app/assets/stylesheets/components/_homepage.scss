@@ -16,9 +16,23 @@
 }
 
 
-.index-thumbs:hover{
-  border: 1px solid red;
-  scale: 1.025;
+// .index-thumbs:hover{
+//   border: 1px solid #E2E1E2;
+//   scale: 1.025;
+// }
+.thumbs-projetinhos{
+  scale: 1;
+  transition: .3s;
+  color: white;
+  text-decoration: none;
+  text-decoration-line: white;
+  text-decoration-color: white;
+
+}
+.thumbs-projetinhos:hover{
+  color: white;
+  border: 1px solid #e2e1e2;
+  scale: 1.02;
 }
 
 @media (max-width: 900px)
