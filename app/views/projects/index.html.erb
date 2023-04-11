@@ -4,7 +4,7 @@
 
     <% if project.present? %>
 
-      <%= link_to project_path(project) do  %>
+      <%= link_to project_path(project), class:'thumbs-projetinhos' do  %>
         <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
       <% end %>
 
