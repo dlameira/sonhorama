@@ -15,20 +15,27 @@
     line-height: 50px;
     width: max-content;
 
-
     p {
       color: black;
       font-size: 1.5rem;
       text-transform: uppercase;
       font-weight: bold;
       margin: 0;
-      line-height: 1;
+      // line-height: 1;
       white-space: nowrap;
       overflow: hidden;
       animation: 59s scrollText linear infinite;
       animation-fill-mode: forwards;
       animation-delay: -20s;
     }
+    img{
+      padding-bottom: 10px;
+    }
+  }
+
+  #news-ticket-text{
+    display: flex;
+    align-items: center;
   }
 }
 

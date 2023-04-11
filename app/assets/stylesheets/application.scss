@@ -2,7 +2,8 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
+// @import "actiontext";
+@import 'trix/dist/trix.css';
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -27,4 +28,5 @@ h1 {
 p {
   font-family: 'Replica', sans-serif;
   font-weight: normal;
+  line-height: 1.2;
 }
