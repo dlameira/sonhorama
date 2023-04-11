@@ -9,7 +9,9 @@
 
     <div class="col-md-6 project-title">
       <h1><%= @project.title %></h1>
-      <h1><%= @project.client %></h1>
+      <% if @project.subheading %>
+        <h1><%= @project.subheading %></h1>
+      <% end %>
     </div>
 
     <div class="col-md-6 project-description">
