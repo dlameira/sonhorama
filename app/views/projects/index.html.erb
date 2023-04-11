@@ -6,6 +6,7 @@
 
       <%= link_to project_path(project), class:'thumbs-projetinhos' do  %>
         <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
+        <p class="thumb-title"><%= project.title %></p>
       <% end %>
 
     <% end %>
