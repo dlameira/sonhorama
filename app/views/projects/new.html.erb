@@ -17,12 +17,14 @@
 
     <div class="form-group">
       <%= form.label :title %>
-      <%= form.text_field :title, class: "form-control" %>
+      <%= form.text_field :title, class: "form-control customized-min-height", style: "width: 100%;"%>
     </div>
 
     <div class="form-group">
-      <%= form.label :description %>
-      <%= form.text_area :description, class: "form-control" %>
+      <%= form.label :content %>
+      <%= form.rich_text_area :content, class: "form-control" %>
+      <%# <%= form.label :description %>
+      <%# <%= form.text_area :description, class: "form-control" %>
     </div>
 
     <div class="form-group">

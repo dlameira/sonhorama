@@ -11,13 +11,20 @@
     font-weight: 300;
     margin-top: 0px;
     padding-top: 0px;
+    line-height: 1;
   }
 
+}
+
+.project-title{
+  min-width: 400px;
+  padding-right: 10px;
 }
 .project-banner{
   max-width: 100vw;
   height: 600px;
   object-fit: cover;
+  margin-top: 60px;
 }
 
 .project-description{
