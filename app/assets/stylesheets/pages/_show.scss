@@ -7,11 +7,11 @@
     color: white;
     font-family: 'Garamond Nova Cond L';
     text-transform: uppercase;
-    font-size: 7rem;
+    font-size: 10vw;
     font-weight: 300;
     margin-top: 0px;
-    padding-top: 0px;
-    line-height: 1;
+    padding: 0px;
+    line-height: .8;
   }
 
 }
@@ -25,6 +25,12 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   margin-top: 60px;
+}
+
+.about-cover{
+  aspect-ratio: 16 / 9;
+  margin: 20px auto;
+  border-radius: 12px;
 }
 
 .project-description{
