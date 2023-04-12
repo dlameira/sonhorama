@@ -14,7 +14,7 @@
     text-align: center;
     z-index: 2; // make sure the slogan is in front of the background image
     white-space: nowrap;
-    margin-top: 5px;
+    // margin-top: 2px;
 
 
     h1 {
@@ -25,7 +25,6 @@
       text-transform: uppercase;
       // letter-spacing: 0.1em; // adjust the letter spacing as needed
       margin: 0;
-
     }
   }
 }
