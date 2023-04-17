@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10))
 
-    (1..10).each do |row_number|
+    (1..15).each do |row_number|
       row_images_param = "detail_images_row_#{row_number}".to_sym
       project_params[row_images_param].each do |image|
         if image.present?
@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
   def update
     @project.assign_attributes(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10))
 
-      (1..10).each do |row_number|
+      (1..15).each do |row_number|
       row_images_param = "detail_images_row_#{row_number}".to_sym
       row_images = @project.detail_images.first(row_number)
 
@@ -78,6 +78,7 @@ class ProjectsController < ApplicationController
                                       detail_images_row_1: [], detail_images_row_2: [], detail_images_row_3: [],
                                       detail_images_row_4: [], detail_images_row_5: [], detail_images_row_6: [],
                                       detail_images_row_7: [], detail_images_row_8: [], detail_images_row_9: [],
-                                      detail_images_row_10: [])
+                                      detail_images_row_10: [], detail_images_row_11: [], detail_images_row_12: [],
+                                      detail_images_row_13: [], detail_images_row_14: [], detail_images_row_15: [],)
   end
 end
