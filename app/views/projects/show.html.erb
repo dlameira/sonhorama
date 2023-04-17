@@ -1,9 +1,21 @@
 <div class="containershow">
 
+  <div class="project-banner">
 
-  <% if @project.banner.attached? %>
-   <%= cl_image_tag @project.banner.key, class:'about-cover' %>
-  <% end %>
+    <% if @project.banner.attached? %>
+    <%# <%= cl_image_tag @project.banner.key, class:'about-cover' %>
+      <% if @project.banner.attached? %>
+        <% if @project.banner.content_type.start_with?('image') %>
+          <%= cl_image_tag @project.banner.key, class:'about-cover'%>
+        <% elsif @project.banner.content_type.start_with?('video') %>
+          <%= cl_video_tag(@project.banner.key, loop: true, autoplay: true, muted: true, class:'about-cover') %>
+        <% end %>
+      <% else %>
+        <!-- Render a default image or video -->
+      <% end %>
+    <% end %>
+
+  </div>
 
   <div class="row my-3">
 
