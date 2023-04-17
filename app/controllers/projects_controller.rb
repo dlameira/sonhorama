@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -32,13 +33,37 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project
   end
 
   def update
-    if @project.update(project_params)
+    @project.assign_attributes(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10))
+
+      (1..10).each do |row_number|
+      row_images_param = "detail_images_row_#{row_number}".to_sym
+      row_images = @project.detail_images.first(row_number)
+
+      if project_params[row_images_param].nil?
+        # Remove existing images for the current row
+        row_images.purge
+      else
+        # Remove existing images for the current row
+        row_images.each(&:purge)
+
+        # Add new images for the current row
+        project_params[row_images_param].each do |image|
+          if image.present?
+            @project.detail_images.attach(io: image.tempfile, filename: image.original_filename, content_type: image.content_type, metadata: { row: row_number })
+          end
+        end
+      end
+
+    end
+
+    if @project.save
       redirect_to @project, notice: 'Project was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
