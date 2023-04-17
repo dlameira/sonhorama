@@ -4,16 +4,17 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px;
+  // padding: 10px;
   overflow: hidden;
-  height: 50px;
+  height: 40px;
 
   .news-ticker {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    line-height: 50px;
+    // line-height: 50px;
     width: max-content;
+    height: 100%;
 
     p {
       color: black;
@@ -27,6 +28,7 @@
       animation: 59s scrollText linear infinite;
       animation-fill-mode: forwards;
       animation-delay: -20s;
+      padding-top: 3px;
     }
     img{
       padding-bottom: 10px;
