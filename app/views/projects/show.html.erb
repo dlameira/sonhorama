@@ -1,9 +1,21 @@
 <div class="containershow">
 
+  <div class="project-banner">
 
-  <% if @project.banner.attached? %>
-   <%= cl_image_tag @project.banner.key, class:'about-cover' %>
-  <% end %>
+    <% if @project.banner.attached? %>
+    <%# <%= cl_image_tag @project.banner.key, class:'about-cover' %>
+      <% if @project.banner.attached? %>
+        <% if @project.banner.content_type.start_with?('image') %>
+          <%= cl_image_tag @project.banner.key, class:'about-cover'%>
+        <% elsif @project.banner.content_type.start_with?('video') %>
+          <%= cl_video_tag(@project.banner.key, loop: true, autoplay: true, muted: true, class:'about-cover') %>
+        <% end %>
+      <% else %>
+        <!-- Render a default image or video -->
+      <% end %>
+    <% end %>
+
+  </div>
 
   <div class="row my-3">
 
@@ -24,7 +36,7 @@
   </div>
 
   <div class="project-images-container">
-    <% (1..10).each do |row_number| %>
+    <% (1..15).each do |row_number| %>
       <% images_in_row = @project.detail_images.select { |img| img.metadata['row'].to_i == row_number } %>
       <% next if images_in_row.empty? %>
 
