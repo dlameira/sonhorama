@@ -17,7 +17,10 @@
 
 
   <body>
-    <%= render 'shared/navbar'%>
+    <%# <%= render 'shared/navbar'%>
+    <%= render partial: "shared/navbar" if current_page?(root_path) %>
+    <%= render partial: "shared/navbar_home" unless current_page?(root_path) %>
+
     <%= yield %>
 
     <%= render 'shared/footer' %>
