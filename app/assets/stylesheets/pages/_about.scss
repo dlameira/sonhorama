@@ -55,6 +55,10 @@
   margin: 40px auto 90px auto;
 }
 
+.clients-svg{
+  filter: invert(97%)  saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
 @media (max-width:1200px){
 	.about-title{
 		font-size: 10vw;
