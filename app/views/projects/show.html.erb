@@ -27,10 +27,15 @@
     </div>
 
     <div class="col-md-6 project-description">
-      <%= @project.content%>
-      <p class="project-details client">client: <%= @project.client %></p>
-      <p class="project-details">date: <%= @project.date %></p>
-      <p class="project-details">Collaborators: <%= @project.collaborators %></p>
+    <%= @project.content %>
+    <div class="project-credits" data-controller="credits">
+      <p><strong>Credits +</strong></p>
+      <%# <%= @project.credit %>
+    </div>
+      <%# <%= @project.content%>
+      <%# <p class="project-details client">client: <%= @project.client</p> %>
+      <%# <p class="project-details">date: <%= @project.date</p>  %>
+      <%# <p class="project-details">Collaborators: <%= @project.collaborators</p>  %>
     </div>
 
   </div>
