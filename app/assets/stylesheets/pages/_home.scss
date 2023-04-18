@@ -3,8 +3,9 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-    min-height: 100vh;
-    padding-top: 20px;
+  min-height: 100vh;
+  max-width: 100%;
+  padding-top: 20px;
 
 
   .slogan {
@@ -26,7 +27,7 @@
       text-transform: uppercase;
       display: inline-block;
       // letter-spacing: 0.1em; // adjust the letter spacing as needed
-      margin: 0 15px;
+      margin: 0 1.2vw;
       line-height: 1;
     }
   }
