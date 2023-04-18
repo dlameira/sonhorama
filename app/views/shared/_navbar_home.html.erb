@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="container">
+
+    <div class="navbar-part1">
+
+      <%= link_to root_path, class: 'nav-link' do %>
+        <div>
+          <%= image_tag "estrela.svg", class:"star svg"%>
+          <%= image_tag "estrela.svg", class:"star svg" %>
+          <%= image_tag "estrela.svg", class:"star svg"%>
+        </div>
+      <% end %>
+
+      <%= link_to "PROJECTS", projects_path, class: "nav-link left" %>
+
+    </div>
+
+    <%= link_to about_path, class:'nav-link' do %>
+      <span class="nav-link right">SONHORAMA</span>
+    <% end %>
+
+  </div>
+</nav>
