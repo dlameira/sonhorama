@@ -29,7 +29,9 @@
     <div class="col-md-6 project-description">
     <%= @project.content %>
     <div class="project-credits" data-controller="credits">
-      <p><strong>Credits +</strong></p>
+      <div class="credits-plus" data-action="click->credits#show">
+        <p><strong>Credits +</strong></p>
+      </div>
       <%# <%= @project.credit %>
     </div>
       <%# <%= @project.content%>
