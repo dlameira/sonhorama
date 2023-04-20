@@ -2,12 +2,16 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = ["plus"]
+  static targets = ["content"]
 
   connect() {
-    console.log("Hello from our first Stimulus controller")
+    console.log(this.element)
   }
+
   show() {
-    console.log('test')
+    if (this.hasContentTarget) {
+      this.contentTarget.classList.toggle("d-none")
+    }
+    console.log(this.contentTarget.classList)
   }
 }
