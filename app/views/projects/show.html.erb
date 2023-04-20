@@ -28,9 +28,17 @@
 
     <div class="col-md-6 project-description">
     <%= @project.content %>
+
     <div class="project-credits" data-controller="credits">
+
       <div class="credits-plus" data-action="click->credits#show">
+
         <p><strong>Credits +</strong></p>
+
+        <div class="d-none" data-credits-target="content">
+          <p ><%= @project.credit %></p>
+        </div>
+
       </div>
       <%# <%= @project.credit %>
     </div>
@@ -60,6 +68,13 @@
     <% if (user_signed_in?) %>
       <%= link_to "edit", edit_project_path(@project), class:'btn btn-primary'%>
     <% end %>
+
+    <div class="show-final-credits">
+      <p><%= @project.client %></p>
+      <% if @project.date.present? %>
+        <p><%= @project.date.year %></p>
+      <% end %>
+    </div>
   </div>
 
 
