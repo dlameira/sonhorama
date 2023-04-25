@@ -32,7 +32,7 @@
       <div class="project-credits" data-controller="credits">
         <div class="credits-plus" data-action="click->credits#show">
 
-          <p><strong>Credits +</strong></p>
+          <p data-credits-target="credits"><strong>Credits +</strong></p>
 
           <div data-credits-target="content" class="hide-credits">
             <%= @project.credit%>
@@ -42,12 +42,7 @@
       </div>
 
     </div>
-    <%# </div> %>
-      <%# <%= @project.content%>
-      <%# <p class="project-details client">client: <%= @project.client</p> %>
-      <%# <p class="project-details">date: <%= @project.date</p>  %>
-      <%# <p class="project-details">Collaborators: <%= @project.collaborators</p>  %>
-    <%# </div> %>
+
   </div>
 
   <div class="project-images-container">
