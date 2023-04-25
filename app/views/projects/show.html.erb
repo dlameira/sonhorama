@@ -27,27 +27,27 @@
     </div>
 
     <div class="col-md-6 project-description">
-    <%= @project.content %>
+      <%= @project.content %>
 
-    <div class="project-credits" data-controller="credits">
+      <div class="project-credits" data-controller="credits">
+        <div class="credits-plus" data-action="click->credits#show">
 
-      <div class="credits-plus" data-action="click->credits#show">
+          <p><strong>Credits +</strong></p>
 
-        <p><strong>Credits +</strong></p>
+          <div data-credits-target="content" class="hide-credits">
+            <%= @project.credit%>
+          </div>
 
-        <div class="d-none" data-credits-target="content">
-          <p ><%= @project.credit %></p>
         </div>
-
       </div>
-      <%# <%= @project.credit %>
+
     </div>
+    <%# </div> %>
       <%# <%= @project.content%>
       <%# <p class="project-details client">client: <%= @project.client</p> %>
       <%# <p class="project-details">date: <%= @project.date</p>  %>
       <%# <p class="project-details">Collaborators: <%= @project.collaborators</p>  %>
-    </div>
-
+    <%# </div> %>
   </div>
 
   <div class="project-images-container">

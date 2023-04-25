@@ -5,13 +5,13 @@ export default class extends Controller {
   static targets = ["content"]
 
   connect() {
-    console.log(this.element)
+    console.log("Controller connected")
+    console.log(this.contentTarget)
   }
 
-  show() {
-    if (this.hasContentTarget) {
-      this.contentTarget.classList.toggle("d-none")
-    }
-    console.log(this.contentTarget.classList)
+  show(event) {
+    event.stopImmediatePropagation()
+    this.contentTarget.classList.toggle("hide-credits")
+    this.contentTarget.classList.toggle("show-credits")
   }
 }

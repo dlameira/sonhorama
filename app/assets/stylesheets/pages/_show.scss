@@ -43,9 +43,38 @@
 }
 
 .project-credits{
-  p{
-    padding-top: 20px;
+  margin-top: 20px;
+}
+
+.credits-plus .hide-credits {
+  opacity: 0;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 0.3s ease-out, height 0.3s ease-out;
+}
+
+.credits-plus .show-credits {
+  opacity: 1;
+  height: auto;
+  animation: slide-down 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in, height 0.3s ease-in;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-20px);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Add these transition properties to the hide-credits class */
+.project-credits .hide-credits {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in, height 0.3s ease-in;
 }
 
 .client{
@@ -63,7 +92,7 @@
 }
 .project-images-container{
   padding-bottom: 40px;
-  padding-top: 50px;
+  padding-top: 30px;
   // padding-left: 200px;
   // padding-right: 200px;
 }
