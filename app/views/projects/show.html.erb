@@ -19,14 +19,14 @@
 
   <div class="row my-3">
 
-    <div class="col-md-6 project-title">
+    <div class="col-4 project-title">
       <h1><%= @project.title %></h1>
       <% if @project.subheading %>
         <h1><%= @project.subheading %></h1>
       <% end %>
     </div>
 
-    <div class="col-md-6 project-description">
+    <div class="col-8 project-description">
       <%= @project.content %>
 
       <div class="project-credits" data-controller="credits">
