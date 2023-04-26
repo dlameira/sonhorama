@@ -18,7 +18,7 @@ export default class extends Controller {
 
   onDragEnd(event) {
     if (this.isLoggedIn()) {
-      const itemId = event.item.id;
+      const itemId = event.item.dataset.projectId;
       const newPosition = this.getNewPosition(event.item);
 
       this.updatePosition(itemId, newPosition);

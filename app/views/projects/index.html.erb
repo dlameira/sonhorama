@@ -21,7 +21,7 @@
   data-project-thumbnail-logged-in="<%= user_signed_in? %>">
   <% @projects.each do |project| %>
     <% if project.present? %>
-      <%= link_to project_path(project), class:'thumbs-projetinhos', data: { project_id: project.id } do  %>
+      <%= link_to project_path(project), class: 'thumbs-projetinhos', data: { project_id: project.id }, id: "project-#{project.id}" do  %>
         <span class="thumb-title"><%= project.title %></span>
         <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
       <% end %>
