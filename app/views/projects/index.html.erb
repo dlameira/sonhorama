@@ -5,8 +5,8 @@
     <% if project.present? %>
 
       <%= link_to project_path(project), class:'thumbs-projetinhos' do  %>
+        <span class="thumb-title"><%= project.title %></span>
         <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
-        <p class="thumb-title"><%= project.title %></p>
       <% end %>
 
     <% end %>
