@@ -37,18 +37,18 @@
 }
 
 .thumb-title{
+  font-family: Replica;
   opacity: 0;
   position: absolute;
   bottom: 40px;
   right: -10%;
   font-size: 1rem;
-  font-weight: bold;
   line-height: .5;
-  letter-spacing: 3px;
+  // letter-spacing: 3px;
   transform: rotate(270deg);
   // text-align: left;
   transition: .3s;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .thumbs-projetinhos:hover .thumb-title{

@@ -7,7 +7,7 @@
     color: white;
     font-family: 'Garamond Nova Cond L';
     text-transform: uppercase;
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: 300;
     margin-top: 0px;
     padding: 0px;
@@ -36,11 +36,12 @@
 }
 
 .project-description{
-  font-size: 1.25rem;
+  font-size: 1.5vw;
   font-weight: light;
   margin-top: 20px;
   font-family: "Replica";
-  padding-right: 10%;
+  padding-right: 20%;
+  line-height: .75;
 }
 
 .project-credits{
