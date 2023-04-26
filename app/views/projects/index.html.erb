@@ -17,7 +17,8 @@
 <%# </div> %>
 
 
-<div class="index-projects container-fluid" data-controller="project-thumbnail">
+<div class="index-projects container-fluid" data-controller="project-thumbnail"
+  data-project-thumbnail-logged-in="<%= user_signed_in? %>">
   <% @projects.each do |project| %>
     <% if project.present? %>
       <%= link_to project_path(project), class:'thumbs-projetinhos', data: { project_id: project.id } do  %>

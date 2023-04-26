@@ -3,23 +3,48 @@ import Sortable from "sortablejs";
 
 export default class extends Controller {
   connect() {
-    this.sortable = Sortable.create(this.element, {
-      animation: 150,
-      draggable: ".thumbs-projetinhos",
-      onEnd: this.end.bind(this),
+    if (this.isLoggedIn()) {
+      this.sortable = Sortable.create(this.element, {
+        animation: 150,
+        draggable: ".thumbs-projetinhos",
+        onEnd: this.onDragEnd.bind(this),
+      });
+    }
+  }
+
+  isLoggedIn() {
+    return this.data.get("loggedIn") === "true";
+  }
+
+  onDragEnd(event) {
+    if (this.isLoggedIn()) {
+      const itemId = event.item.id;
+      const newPosition = this.getNewPosition(event.item);
+
+      this.updatePosition(itemId, newPosition);
+    }
+  }
+
+  updatePosition(itemId, newPosition) {
+    const url = `/projects/${itemId}/update_position`;
+    const csrfToken = document.querySelector("[name='csrf-token']").content;
+
+    fetch(url, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRF-Token": csrfToken,
+      },
+      body: JSON.stringify({ position: newPosition }),
+    }).catch((error) => {
+      console.error("Error updating position:", error);
     });
   }
 
-  end(event) {
-    let projectIds = this.sortable.toArray();
-    fetch("/projects/update_order", {
-      method: "PUT",
-      body: JSON.stringify({ order: projectIds }),
-      headers: {
-        "Content-Type": "application/json",
-        "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content,
-      },
-    });
+  getNewPosition(item) {
+    const projectIds = this.sortable.toArray();
+    const newPosition = projectIds.indexOf(item.id);
+    return newPosition;
   }
 
   disconnect() {

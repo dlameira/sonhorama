@@ -44,6 +44,12 @@ class ProjectsController < ApplicationController
     head :ok
   end
 
+  def update_position
+    @item = Project.find(params[:id])
+    @item.update(position: params[:position])
+    head :ok
+  end
+
   def update
     # @project.assign_attributes(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10, :detail_images_row_11, :detail_images_row_12, :detail_images_row_13, :detail_images_row_14, :detail_images_row_15))
 
