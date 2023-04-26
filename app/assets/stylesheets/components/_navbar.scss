@@ -64,15 +64,35 @@
 @media (max-width: 960px) {
   .nav-link{
     font-size: 1.5vw!important;
+    white-space: nowrap;
+  }
+  .star {
+    height: 2vw!important;
+    width: 2vw!important;
+    margin: 0;
   }
 }
+
 @media (max-width: 720px) {
   .nav-link{
-    font-size: 1.8vw!important;
+    font-size: 1.9vw!important;
+    white-space: nowrap;
   }
+  .star {
+    height: 2.5vw!important;
+    width: 2.5vw!important;
+    margin: 0;
+  }
+
 }
 @media (max-width: 560px) {
   .nav-link{
     font-size: 2.2vw!important;
+    white-space: nowrap;
+  }
+  .star {
+    height: 3vw!important;
+    width: 3vw!important;
+    margin: 0;
   }
 }
