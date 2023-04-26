@@ -11,7 +11,7 @@
     }
 
     .about-sonhorama{
-      padding-right: 160px;
+      padding-right: 15%;
     }
 }
 
@@ -57,6 +57,8 @@
 
 .clients-svg{
   filter: invert(97%)  saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  max-width: 480px;
+  text-align: right;
 }
 
 @media (max-width:1200px){
