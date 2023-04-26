@@ -9,3 +9,6 @@ application.register("credits", CreditsController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ProjectThumbnailController from "./project_thumbnail_controller"
+application.register("project-thumbnail", ProjectThumbnailController)
