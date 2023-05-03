@@ -10,14 +10,12 @@
 
   .slogan {
     position: absolute;
-    // top: 10px; // adjust this value according to your desired position
+    top: 3.8vh; // adjust this value according to your desired position
     width: 100%;
     text-align: center;
-    z-index: 7; // make sure the slogan is in front of the background image
+    z-index: 1; // make sure the slogan is in front of the background image
     white-space: nowrap;
-    line-height: .7;
     // margin-top: 2px;
-
 
     h1 {
       font-family: "Garamond Nova Cond L";
@@ -28,7 +26,9 @@
       display: inline-block;
       // letter-spacing: 0.1em; // adjust the letter spacing as needed
       margin: 0 1.2vw;
-      line-height: 1;
+      line-height: .8;
+      display: inline-block;
+      padding: 0;
     }
   }
 }
