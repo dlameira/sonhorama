@@ -1,30 +1,14 @@
-<%# <div class="index-projects container-fluid">
-
-  <% @projects.each do |project| %>
-
-    <%# <% if project.present? %>
-
-      <%# <%= link_to project_path(project), class:'thumbs-projetinhos' do  %>
-        <%# <span class="thumb-title"><%= project.title</span> %>
-        <%# <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
-      <%# <% end %>
-
-    <%# <% end %>
-
-  <%# <%end%>
-
-
-<%# </div> %>
-
 
 <div class="index-projects container-fluid" data-controller="project-thumbnail"
-  data-project-thumbnail-logged-in="<%= user_signed_in? %>">
+  data-project-thumbnail-logged-in="<%= user_signed_in? %>" data-project-thumbnail-target="container">
   <% @projects.each do |project| %>
     <% if project.present? %>
-      <%= link_to project_path(project), class: 'thumbs-projetinhos', data: { project_id: project.id }, id: "project-#{project.id}" do  %>
-        <span class="thumb-title"><%= project.title %></span>
-        <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
-      <% end %>
+      <div data-project-id="<%= project.id %>">
+        <%= link_to project_path(project), class: 'thumbs-projetinhos', id: "project-#{project.id}" do  %>
+          <span class="thumb-title"><%= project.title %></span>
+          <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>

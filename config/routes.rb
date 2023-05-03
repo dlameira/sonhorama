@@ -3,15 +3,13 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/about', to: "pages#about"
 
-  resources :projects
-
   resources :projects do
     put :update_order, on: :collection
+    member do
+      patch :update_position
+    end
   end
 
-  resources :projects do
-    patch :update_position, on: :member
-  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

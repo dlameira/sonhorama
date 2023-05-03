@@ -46,7 +46,8 @@ class ProjectsController < ApplicationController
 
   def update_position
     @item = Project.find(params[:id])
-    @item.update(position: params[:position])
+    new_position = JSON.parse(request.body.read)["position"]
+    @item.update(position: new_position)
     head :ok
   end
 
