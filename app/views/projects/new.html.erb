@@ -1,5 +1,4 @@
-<%# <% provide(:title, "New Project") %>
-<%# <h1>New Project</h1> %>
+
 <div class="form-container">
 
   <%= form_with(model: @project, local: true) do |form| %>
@@ -19,11 +18,6 @@
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control customized-min-height", style: "width: 100%;"%>
     </div>
-
-    <%# <div class="form-group">
-      <%= form.label :subheading %>
-      <%# <%= form.text_field :subheading, class: "form-control customized-min-height", style: "width: 100%;"%>
-    <%# </div> %>
 
     <div class="form-group">
       <%= form.label :content %>
