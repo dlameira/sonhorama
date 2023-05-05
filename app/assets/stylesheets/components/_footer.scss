@@ -7,6 +7,8 @@
   // padding: 10px;
   overflow: hidden;
   height: 40px;
+  width: 100%;
+  white-space: nowrap;
 
   .news-ticker {
     position: absolute;
@@ -17,6 +19,21 @@
     height: 100%;
 
     p {
+      color: black;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0;
+      // line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: 59s scrollText linear infinite;
+      animation-fill-mode: forwards;
+      animation-delay: -20s;
+      padding-top: 3px;
+      display: inline-block;
+    }
+    span {
       color: black;
       font-size: 1.5rem;
       text-transform: uppercase;
