@@ -43,7 +43,7 @@
   width: 2vw; /* Set the width for the title container */
   height: 10vh;
   position: absolute;
-  bottom: 3vh;
+  bottom: 10vh;
   right: -2.2vw; /* Adjust the position to match the width of the container */
 }
 
@@ -57,7 +57,6 @@
   text-transform: uppercase;
   white-space: nowrap;
   text-align: left;
-  display: inline-block;
 }
 
 .thumbs-projetinhos:hover .thumb-title {
