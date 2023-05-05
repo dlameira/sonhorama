@@ -53,41 +53,57 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    # First update the project with the new parameters
-    if @project.update(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10, :detail_images_row_11, :detail_images_row_12, :detail_images_row_13, :detail_images_row_14, :detail_images_row_15))
-      # Handle detail images update
-      (1..15).each do |row_number|
-        row_images_param = "detail_images_row_#{row_number}".to_sym
-        new_images = project_params[row_images_param]
-        existing_images = detail_images_by_row(@project, row_number)
+    # Handle detail images update
+    (1..15).each do |row_number|
+      row_images_param = "detail_images_row_#{row_number}".to_sym
+      new_images = project_params[row_images_param]
+      existing_images = detail_images_by_row(@project, row_number)
 
-        if new_images.present?
-          # Attach new images for the current row
-          new_images.each do |image|
-            if image.present?
-              @project.detail_images.attach(io: image.tempfile, filename: image.original_filename, content_type: image.content_type, metadata: { row: row_number })
-            end
+      if new_images.present?
+        existing_images.each_with_index do |existing_image, index|
+          if new_images[index].present?
+            existing_image.purge_later
           end
+        end
 
-          # Purge existing images for the current row
-          existing_images.each(&:purge_later)
+        # Attach new images for the current row
+        new_images.each do |image|
+          if image.present?
+            @project.detail_images.attach(io: image.tempfile, filename: image.original_filename, content_type: image.content_type, metadata: { row: row_number })
+          end
         end
       end
+    end
 
+    if @project.update(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10, :detail_images_row_11, :detail_images_row_12, :detail_images_row_13, :detail_images_row_14, :detail_images_row_15))
       redirect_to @project, notice: 'Project was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
-    # if @project.update(project_params)
-    #   redirect_to @project, notice: 'Project was successfully updated.'
-    # else
-    #   render :edit, status: :unprocessable_entity
-    # end
-
 
   private
+
+  def update_detail_images
+    (1..15).each do |row_number|
+      row_images_param = "detail_images_row_#{row_number}".to_sym
+      new_images = project_params[row_images_param]
+      existing_images = detail_images_by_row(@project, row_number)
+
+      if new_images.present?
+        # Destroy existing images for the current row
+        existing_images.each(&:destroy)
+
+        # Attach new images for the current row
+        new_images.each do |image|
+          if image.present?
+            @project.detail_images.attach(io: image.tempfile, filename: image.original_filename, content_type: image.content_type, metadata: { row: row_number })
+          end
+        end
+      end
+    end
+  end
 
   def set_project
     @project = Project.find(params[:id])
@@ -99,6 +115,6 @@ class ProjectsController < ApplicationController
                                       detail_images_row_4: [], detail_images_row_5: [], detail_images_row_6: [],
                                       detail_images_row_7: [], detail_images_row_8: [], detail_images_row_9: [],
                                       detail_images_row_10: [], detail_images_row_11: [], detail_images_row_12: [],
-                                      detail_images_row_13: [], detail_images_row_14: [], detail_images_row_15: [],)
+                                      detail_images_row_13: [], detail_images_row_14: [], detail_images_row_15: [])
   end
 end
