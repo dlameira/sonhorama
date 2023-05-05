@@ -25,10 +25,16 @@
       text-transform: uppercase;
       display: inline-block;
       // letter-spacing: 0.1em; // adjust the letter spacing as needed
-      margin: 0 1.2vw;
+      margin: 0 0 0 1.2vw;
       line-height: .8;
       display: inline-block;
       padding: 0;
     }
+  }
+  img{
+    width: 12vw;
+    position: fixed;
+    top: 16vh;
+    left: 0px;
   }
 }
