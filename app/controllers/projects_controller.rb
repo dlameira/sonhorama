@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
   include ApplicationHelper
-  before_action :set_project, only: [:show, :edit, :update]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path, status: :see_other
+  end
 
   def index
     @projects = Project.all.order(:position)
