@@ -30,15 +30,14 @@
       <%= @project.content %>
 
       <div class="project-credits" data-controller="credits">
+
         <div class="credits-plus" data-action="click->credits#show">
-
           <p data-credits-target="credits"><strong>Credits +</strong></p>
-
-          <div data-credits-target="content" class="hide-credits">
+          <div data-credits-target="content" class="project-credit-content">
             <%= @project.credit%>
           </div>
-
         </div>
+
       </div>
 
     </div>
