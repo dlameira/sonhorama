@@ -5,11 +5,17 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   max-width: 100%;
-  padding-top: 20px;
+  // padding-top: 20px;
 
+  .home-content{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1.8vw;
+    gap: 5px;
+  }
 
   .slogan {
-    position: absolute;
     top: 3.8vh; // adjust this value according to your desired position
     width: 100%;
     text-align: center;
@@ -20,21 +26,19 @@
     h1 {
       font-family: "Garamond Nova Cond L";
       color: #e2e2e2;
-      font-size: 10.3vw; // adjust the font size as needed
+      font-size: 10.4vw; // adjust the font size as needed
       font-weight: 500;
       text-transform: uppercase;
       display: inline-block;
       // letter-spacing: 0.1em; // adjust the letter spacing as needed
-      margin: 0 0 0 1.2vw;
+      margin: 0 0 0 1vw;
       line-height: .8;
       display: inline-block;
       padding: 0;
     }
   }
   img{
-    width: 12vw;
-    position: fixed;
-    top: 16vh;
-    left: 0px;
+    max-width: 12vw;
+    margin-top: -1vw;
   }
 }
