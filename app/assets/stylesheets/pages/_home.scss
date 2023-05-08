@@ -5,11 +5,17 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   max-width: 100%;
-  padding-top: 20px;
+  // padding-top: 20px;
 
+  .home-content{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1.8vw;
+    gap: 5px;
+  }
 
   .slogan {
-    position: absolute;
     top: 3.8vh; // adjust this value according to your desired position
     width: 100%;
     text-align: center;
@@ -32,9 +38,7 @@
     }
   }
   img{
-    width: 12vw;
-    position: fixed;
-    top: 16vh;
-    left: 0px;
+    max-width: 12vw;
+    margin-top: -1vw;
   }
 }
