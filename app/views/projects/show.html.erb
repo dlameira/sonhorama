@@ -62,6 +62,7 @@
 
     <% if (user_signed_in?) %>
       <%= link_to "edit", edit_project_path(@project), class:'btn btn-primary'%>
+      <%= link_to "delete", project_path(@project), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'btn btn-secondary' %>
     <% end %>
 
     <div class="show-final-credits">
