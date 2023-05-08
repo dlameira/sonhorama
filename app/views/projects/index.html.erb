@@ -6,15 +6,17 @@
 
     <% if project.present? %>
 
-      <div data-project-id="<%= project.id %>">
-        <%= link_to project_path(project), class: 'thumbs-projetinhos', id: "project-#{project.id}" do  %>
-          <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
-          <div class="thumb-title-container">
-            <span class="thumb-title"><%= project.title %></span>
-          </div>
-        <% end %>
+      <div data-project-id="<%= project.id %>" class="project-thumbs">
+
+       <div class="thumb-title-container">
+          <p class="thumb-title"><%= project.title %></p>
       </div>
 
+        <%= link_to project_path(project), class: 'thumbs-projetinhos', id: "project-#{project.id}" do  %>
+          <%= cl_image_tag project.thumbnail.key, class:'index-thumbs' %>
+        <% end %>
+
+      </div>
 
     <% end %>
 
