@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import ProjectThumbnailController from "./project_thumbnail_controller"
 application.register("project-thumbnail", ProjectThumbnailController)
+
+import TickerController from "./ticker_controller"
+application.register("ticker", TickerController)

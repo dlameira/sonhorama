@@ -42,20 +42,17 @@ class ProjectsController < ApplicationController
     @project
   end
 
-  def update_order
-    params[:order].each_with_index do |id, index|
-      Project.find(id).update(position: index + 1)
-    end
-
-    head :ok
-  end
-
   def update_position
     @item = Project.find(params[:id])
-    new_position = JSON.parse(request.body.read)["position"]
-    @item.update(position: new_position)
-    head :ok
+    if @item.update(project_params)
+      puts "Successfully updated project: #{@item.inspect}" # Add this line for debugging
+      head :ok
+    else
+      puts "Failed to update project: #{@item.errors.full_messages.join(', ')}" # Add this line for debugging
+      render json: @item.errors, status: :unprocessable_entity
+    end
   end
+
 
   def update
     # Handle detail images update
