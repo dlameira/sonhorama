@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   get '/about', to: "pages#about"
 
   resources :projects do
-    put :update_order, on: :collection
     member do
-      patch :update_position
+      put :update_position
     end
   end
 

@@ -42,16 +42,17 @@ export default class extends Controller {
     const csrfToken = document.querySelector("[name='csrf-token']").content;
 
     fetch(url, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
         "X-CSRF-Token": csrfToken,
       },
-      body: JSON.stringify({ project: { position: newPosition } }),
+      body: JSON.stringify({ position: newPosition }),
     }).catch((error) => {
       console.error("Error updating position:", error);
     });
   }
+
 
   getNewPosition(item) {
     const projectIds = Array.from(this.element.querySelectorAll('[data-project-id]'))
