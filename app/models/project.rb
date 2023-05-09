@@ -3,6 +3,7 @@ class Project < ApplicationRecord
   has_one_attached :banner, dependent: :destroy
   has_many_attached :detail_images, dependent: :destroy
   has_many :project_tags, dependent: :destroy
+  has_many :tags, through: :project_tags
   has_rich_text :content
   has_rich_text :credit
 
