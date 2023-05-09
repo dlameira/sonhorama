@@ -40,8 +40,12 @@
   font-weight: light;
   margin-top: 20px;
   font-family: "Replica";
-  padding-right: 20%;
-  line-height: .75;
+  padding-right: 15%;
+  line-height: 1.1;
+}
+
+.project-description .trix-content{
+  line-height: 1.2!important;
 }
 
 .project-credits{
