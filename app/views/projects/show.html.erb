@@ -66,6 +66,7 @@
 
     <div class="show-final-credits">
       <p><%= @project.client %></p>
+      <p><%= @project.tags.map(&:name).join(', ') %></p>
       <% if @project.date.present? %>
         <p><%= @project.date.year %></p>
       <% end %>

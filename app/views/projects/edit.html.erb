@@ -20,6 +20,24 @@
     </div>
 
     <div class="form-group">
+    <h3>Tags</h3>
+    <div class="row">
+      <% Tag.all.each_with_index do |tag, index| %>
+        <div class="col-md-3">
+          <div class="form-check">
+            <%= check_box_tag 'project[tag_ids][]', tag.id, @project.tags.include?(tag), id: "project_tag_ids_#{tag.id}", class: "form-check-input" %>
+            <%= label_tag "project_tag_ids_#{tag.id}", tag.name, class: "form-check-label" %>
+          </div>
+        </div>
+        <% if (index + 1) % 4 == 0 %>
+          </div>
+          <div class="row">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="form-group">
       <%= form.label :callout %>
       <%= form.text_field :callout, class: "form-control" %>
     </div>
