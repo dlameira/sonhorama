@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get '/about', to: "pages#about"
 
   resources :projects do
-    member do
-      put :update_position
+    collection do
+      put 'update_positions'
     end
+    # ... your other routes ...
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
