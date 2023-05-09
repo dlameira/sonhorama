@@ -32,14 +32,6 @@ class ProjectsController < ApplicationController
     end
 
     if @project.save
-      params[:project][:tag_ids].delete_at(0)
-      tags_array = params[:project][:tag_ids]
-      tags_array.each do |tag|
-        @project_tag = ProjectTag.new
-        @project_tag.tag_id = tag.to_i
-        @project_tag.project = @project
-        @project_tag.save!
-      end
       redirect_to @project, notice: 'Project was successfully created.'
     else
       render :new, status: :unprocessable_entity
@@ -89,13 +81,6 @@ class ProjectsController < ApplicationController
     end
 
     if @project.update(project_params.except(:detail_images_row_1, :detail_images_row_2, :detail_images_row_3, :detail_images_row_4, :detail_images_row_5, :detail_images_row_6, :detail_images_row_7, :detail_images_row_8, :detail_images_row_9, :detail_images_row_10, :detail_images_row_11, :detail_images_row_12, :detail_images_row_13, :detail_images_row_14, :detail_images_row_15))
-      tags_array = params[:project][:tag_ids]
-      tags_array.each do |tag|
-        @project_tag = ProjectTag.new
-        @project_tag.tag_id = tag.to_i
-        @project_tag.project = @project
-        @project_tag.save!
-      end
       redirect_to @project, notice: 'Project was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
@@ -130,7 +115,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :subheading, :description, :credit, :callout, :collaborators, :client, :date, :thumbnail, :banner, :content, :listed, :position, tags: [],
+    params.require(:project).permit(:title, :subheading, :description, :credit, :callout, :collaborators, :client, :date, :thumbnail, :banner, :content, :listed, :position, tags: [], tag_ids: [],
                                       detail_images_row_1: [], detail_images_row_2: [], detail_images_row_3: [],
                                       detail_images_row_4: [], detail_images_row_5: [], detail_images_row_6: [],
                                       detail_images_row_7: [], detail_images_row_8: [], detail_images_row_9: [],
