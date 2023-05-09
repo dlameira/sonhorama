@@ -17,6 +17,7 @@
 
   </div>
 
+
   <div class="row my-3">
 
     <div class="col-4 project-title">
@@ -45,6 +46,7 @@
   </div>
 
   <div class="project-images-container">
+
     <% (1..15).each do |row_number| %>
       <% images_in_row = @project.detail_images.select { |img| img.metadata['row'].to_i == row_number } %>
       <% next if images_in_row.empty? %>

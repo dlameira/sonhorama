@@ -25,20 +25,22 @@ export default class extends Controller {
   }
 
   onDragEnd(event) {
-    console.log("onDragEnd called"); // Add this line
+    console.log("onDragEnd called");
     if (this.isLoggedIn()) {
-      const itemId = event.item.dataset.projectId;
-      const newPosition = this.getNewPosition(event.item);
+      const projects = Array.from(this.element.querySelectorAll('[data-project-id]'));
+      const newProjectIds = projects.map(element => element.dataset.projectId);
 
-      this.updatePosition(itemId, newPosition);
+      this.updatePositions(newProjectIds);
     }
   }
 
+  updatePositions(newProjectIds) {
+    console.log("New project order:");
+    newProjectIds.forEach((projectId, index) => {
+      console.log(`Project ID: ${projectId}, New position: ${index}`);
+    });
 
-  updatePosition(itemId, newPosition) {
-    console.log("New position:", newPosition);
-
-    const url = `/projects/${itemId}/update_position`;
+    const url = `/projects/update_positions`;
     const csrfToken = document.querySelector("[name='csrf-token']").content;
 
     fetch(url, {
@@ -47,12 +49,11 @@ export default class extends Controller {
         "Content-Type": "application/json",
         "X-CSRF-Token": csrfToken,
       },
-      body: JSON.stringify({ position: newPosition }),
+      body: JSON.stringify({ project_ids: newProjectIds }),
     }).catch((error) => {
-      console.error("Error updating position:", error);
+      console.error("Error updating positions:", error);
     });
   }
-
 
   getNewPosition(item) {
     const projectIds = Array.from(this.element.querySelectorAll('[data-project-id]'))
