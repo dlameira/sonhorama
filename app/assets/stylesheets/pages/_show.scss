@@ -22,20 +22,19 @@
   margin-top: 20px;
 }
 .project-banner{
-  max-width: 100vw;
   object-fit: cover;
   margin-top: 60px;
 
   img{
-    aspect-ratio: 16 / 9;
+    min-width: 100%;
   }
 }
 
 .about-cover{
+  max-width: fit-content;
   aspect-ratio: 16 / 9;
   margin: 0 auto;
   border-radius: 12px;
-
 }
 
 .project-description{
