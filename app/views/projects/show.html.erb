@@ -54,7 +54,14 @@
       <div class="project-images" style="grid-template-columns: repeat(<%= images_in_row.count %>, 1fr)">
         <% images_in_row.each do |image| %>
           <div>
-            <%= cl_image_tag image.key, class: "project-image" %>
+            <%# <%= cl_image_tag image.key, class: "project-image" %>
+
+              <% if image.content_type.start_with?('image') %>
+                <%= cl_image_tag image.key, class:'project-image'%>
+              <% elsif image.content_type.start_with?('video') %>
+                <%= cl_video_tag(image.key, loop: true, autoplay: true, muted: true, class:'project-image') %>
+              <% end %>
+
           </div>
         <% end %>
       </div>
