@@ -1,35 +1,73 @@
-.container-sonhorama{
+// .container-sonhorama{
+//   padding: 25px;
+//   background-color: black;
+//   position: relative;
+
+//     p{
+//       color: #e2e2e2;
+//       font-family: "Replica";
+//       font-weight: light;
+//       font-size: 20px;
+//       margin-top: 8px;
+//       position: r;
+//     }
+
+//     .about-sonhorama{
+//       padding-right: 15%;
+//     }
+// }
+
+// .about-cover{
+//   max-width: 100%;
+//   aspect-ratio: 16 / 9;
+//   object-fit: cover;
+//   border-radius: 12px;
+// }
+
+// .about-title-div{
+//   width: 100%;
+//   text-align: center;
+//   z-index: 2; // make sure the slogan is in front of the background image
+//   white-space: nowrap;
+// }
+
+
+// .about-title{
+//   font-family: "Garamond Nova Cond L";
+//   text-align: center;
+//   color: #e2e2e2;
+//   font-size: 10.38vw;
+//   font-weight: 500;
+//   text-transform: uppercase;
+//   line-height: 1;
+//   padding: 0;
+//   margin: 0 0 0 0;
+// }
+
+
+.container-sonhorama {
+  position: relative;
   padding: 25px;
   background-color: black;
-
-    p{
-      color: #e2e2e2;
-      font-family: "Replica";
-      font-weight: light;
-      font-size: 20px;
-      margin-top: 8px;
-    }
-
-    .about-sonhorama{
-      padding-right: 15%;
-    }
 }
 
-.about-cover{
+.about-cover {
   max-width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 12px;
 }
 
-.about-title-div{
+.about-title-div {
+  position: relative;
   width: 100%;
-  text-align: center;
-  z-index: 2; // make sure the slogan is in front of the background image
-  white-space: nowrap;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-title{
+.about-title {
   font-family: "Garamond Nova Cond L";
   text-align: center;
   color: #e2e2e2;
@@ -38,8 +76,28 @@
   text-transform: uppercase;
   line-height: 1;
   padding: 0;
-  margin: 0 0 0 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
 }
+
+.about-sonhorama p,
+.about-third-column p,
+.contact-sonhorama p {
+  color: #e2e2e2;
+  font-family: "Replica";
+  font-weight: light;
+  font-size: 20px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-sonhorama {
+  padding-right: 15%;
+}
+
 
 .estrelas-about{
   width: 100%;
@@ -53,10 +111,10 @@
   text-align: right;
 }
 
-@media (max-width:1200px){
-	.about-title{
-		font-size: 10vw;
-	}
+@media (max-width:1440px){
+	// .about-title{
+	// 	font-size: 10vw;
+	// }
   .about-sonhorama{
     padding-right: 60px!important;
   }
@@ -86,4 +144,9 @@
   .about-sonhorama{
     padding-right: 30px!important;
   }
+  .about-sonhorama p,
+  .about-third-column p,
+  .contact-sonhorama p {
+  font-size: 14px;
+}
 }
