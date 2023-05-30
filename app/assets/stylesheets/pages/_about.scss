@@ -44,6 +44,17 @@
 //   margin: 0 0 0 0;
 // }
 
+.contact-sonhorama p a{
+  color: #e2e2e2;
+  font-family: "Replica";
+  font-weight: light;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-sonhorama p a:hover{
+  color: #c2c0c0;
+}
 
 .container-sonhorama {
   position: relative;
@@ -91,7 +102,7 @@
   font-size: 20px;
   margin-top: 8px;
   position: relative;
-  z-index: 1;
+  // z-index: 1;
 }
 
 .about-sonhorama {
