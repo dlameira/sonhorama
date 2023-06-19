@@ -1,32 +1,39 @@
-// ticker_controller.js
-import { Controller } from 'stimulus';
+// app/javascript/controllers/ticker_controller.js
+import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['content'];
+  static targets = ["container"];
 
-  initialize() {
+  connect() {
     this.startTicker();
   }
 
   startTicker() {
-    this.contentTargets.forEach((contentTarget, index) => {
-      const tickerWidth = contentTarget.clientWidth;
-      const viewportWidth = document.documentElement.clientWidth;
-      const totalWidth = tickerWidth + viewportWidth;
-      const speed = 50; // Adjust the speed by changing this value (smaller values = faster speed)
-      const duration = (totalWidth / speed) * 1000;
+    setInterval(() => {
+      this.nextMessage();
+    }, 10000);
+  }
 
-      contentTarget.animate(
-        [
-          { transform: `translateX(${viewportWidth + index * tickerWidth}px)` },
-          { transform: `translateX(-${tickerWidth}px)` },
-        ],
-        {
-          duration,
-          iterations: Infinity,
-          easing: 'linear',
-        }
-      );
-    });
+  nextMessage() {
+    const activeMessage = this.containerTargets.find((container) =>
+      container.classList.contains("active")
+    );
+    const currentIndex = this.containerTargets.indexOf(activeMessage);
+    const nextIndex = (currentIndex + 1) % this.containerTargets.length;
+
+    activeMessage.classList.remove("active");
+    this.containerTargets[nextIndex].classList.add("active");
+
+    this.animateTicker();
+  }
+
+  animateTicker() {
+    this.element.style.animation = "none";
+    void this.element.offsetWidth;
+    this.element.style.animation = null;
+  }
+
+  get containerTargets() {
+    return this.targets.find("container");
   }
 }
