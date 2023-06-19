@@ -22,6 +22,7 @@
 
 .message-container {
   display: inline-block;
+  white-space: nowrap;
 }
 
 .ticker-content {
@@ -31,18 +32,45 @@
   font-weight: bold;
   margin: 0;
   white-space: nowrap;
-  animation: scrollText linear infinite;
+  display: inline-block;
+  animation: tickerAnimation 20s linear infinite;
 }
 
+.ticker-star{
+  color: #e2e2e2;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  margin: 0 10px;
+}
 .ticker-content img {
   padding-bottom: 10px;
 }
 
-@keyframes scrollText {
+@keyframes tickerAnimation {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+// @keyframes scrollText {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// }
+
+@media (max-width: 640px) {
+  .ticker-content {
+    font-size: 1rem;
+  }
+  .ticker-star {
+    height: 30px;
+    width: 30px;
   }
 }
