@@ -15,14 +15,24 @@ export default class extends Controller {
   }
 
   nextMessage() {
-    const activeMessage = this.containerTargets.find((container) =>
+    const activeMessages = this.containerTargets.filter((container) =>
       container.classList.contains("active")
     );
-    const currentIndex = this.containerTargets.indexOf(activeMessage);
-    const nextIndex = (currentIndex + 1) % this.containerTargets.length;
 
-    activeMessage.classList.remove("active");
-    this.containerTargets[nextIndex].classList.add("active");
+    activeMessages.forEach((container) => {
+      const currentIndex = this.containerTargets.indexOf(container);
+      const nextIndex = (currentIndex + 1) % this.containerTargets.length;
+
+      container.classList.remove("active");
+      this.containerTargets[nextIndex].classList.add("active");
+    });
+
+    setTimeout(() => {
+      this.containerTargets.forEach((container) =>
+        container.classList.remove("active")
+      );
+      this.containerTargets[0].classList.add("active");
+    }, 1000);
 
     this.animateTicker();
   }
