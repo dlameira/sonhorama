@@ -164,3 +164,44 @@
   font-weight: 600;
   color: #e2e2e2!important;
 }
+
+
+@media (max-width: 640px) {
+
+  // DETALHES FINAIS DO PROJETO --- FOOTER
+  .show-final-credits{
+    gap: 0px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    margin-top: 0px;
+
+    p{
+      line-height: .7;
+    };
+  }
+}
+
+
+@media (max-width: 640px) {
+  .containershow{
+    padding: 0 10px;
+    width: 100%;
+
+    h1{
+      font-size: 8vw;
+    }
+  }
+  .project-title{
+    margin-top: 0px;
+    padding-right: 20%;
+  }
+
+  .project-description{
+    font-size: 3vw;
+    padding-right: 0px;
+    width: 50ch;
+  }
+}
