@@ -42,3 +42,27 @@
     margin-top: -1vw;
   }
 }
+
+@media (max-width: 640px) {
+  .homepage {
+    .home-content{
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8vw;
+      gap: 6vh;
+    }
+    .slogan {
+      h1 {
+        font-size: 17.5vw;
+        text-align: center;
+        white-space: wrap;
+      }
+    }
+    .logo{
+      max-width: 100%;
+      scale: 2;
+    }
+  }
+}

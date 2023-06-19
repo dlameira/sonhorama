@@ -77,14 +77,17 @@
   }
 
 }
-@media (max-width: 560px) {
+@media (max-width: 640px) {
+  .navbar{
+    padding: .8vw 0.8vw;
+  }
   .nav-link{
-    font-size: 2.2vw!important;
+    font-size: 4.5vw!important;
     white-space: nowrap;
   }
   .star {
-    height: 3vw!important;
-    width: 3vw!important;
+    height: 5.5vw!important;
+    width: 5.5vw!important;
     margin: 0;
   }
 }
