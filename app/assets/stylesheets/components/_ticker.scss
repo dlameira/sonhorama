@@ -10,19 +10,26 @@
   white-space: nowrap;
 }
 
-.news-ticker {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: max-content;
-  height: 100%;
-  background-color: transparent;
-  overflow: hidden;
-}
+// .news-ticker {
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // width: max-content;
+  // height: 100%;
+  // background-color: transparent;
+  // overflow: hidden;
+// }
 
 .message-container {
   display: inline-block;
   white-space: nowrap;
+  animation: tickerAnimation 20s linear infinite;
+  animation-delay: -20s;
+}
+
+.news-ticker div:nth-child(2) {
+  animation: tickerAnimation2 20s linear infinite;
+  animation-delay: -10s;
 }
 
 .ticker-content {
@@ -32,20 +39,26 @@
   font-weight: bold;
   margin: 0;
   white-space: nowrap;
-  display: inline-block;
-  animation: tickerAnimation 20s linear infinite;
+  // display: inline-block;
+  // animation: tickerAnimation 40s linear infinite;
 }
 
+
+// SONHORAMA STAR
 .ticker-star{
   color: #e2e2e2;
   height: 40px;
   width: 40px;
   display: inline-block;
-  margin: 0 10px;
+  // margin: 0 10px;
 }
 .ticker-content img {
   padding-bottom: 10px;
 }
+
+
+
+// TICKER ANIMATION
 
 @keyframes tickerAnimation {
   0% {
@@ -56,21 +69,36 @@
   }
 }
 
-// @keyframes scrollText {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(-100%);
-//   }
-// }
+@keyframes tickerAnimation2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
 
-@media (max-width: 640px) {
+
+
+
+
+// MEDIA QUERIES TO MOBILE
+
+@media (max-width: 769px) {
+  .footer{
+    height: 30px;
+  }
   .ticker-content {
     font-size: 1rem;
+
+    img{
+      scale: 0.8;
+      margin: 0;
+    }
   }
   .ticker-star {
     height: 30px;
     width: 30px;
+    margin: 0 4px;
   }
 }
