@@ -8,42 +8,42 @@ export default class extends Controller {
     this.startTicker();
   }
 
-  startTicker() {
-    setInterval(() => {
-      this.nextMessage();
-    }, 10000);
-  }
+  // startTicker() {
+  //   setInterval(() => {
+  //     this.nextMessage();
+  //   }, 10000);
+  // }
 
-  nextMessage() {
-    const activeMessages = this.containerTargets.filter((container) =>
-      container.classList.contains("active")
-    );
+  // nextMessage() {
+  //   const activeMessages = this.containerTargets.filter((container) =>
+  //     container.classList.contains("active")
+  //   );
 
-    activeMessages.forEach((container) => {
-      const currentIndex = this.containerTargets.indexOf(container);
-      const nextIndex = (currentIndex + 1) % this.containerTargets.length;
+  //   activeMessages.forEach((container) => {
+  //     const currentIndex = this.containerTargets.indexOf(container);
+  //     const nextIndex = (currentIndex + 1) % this.containerTargets.length;
 
-      container.classList.remove("active");
-      this.containerTargets[nextIndex].classList.add("active");
-    });
+  //     container.classList.remove("active");
+  //     this.containerTargets[nextIndex].classList.add("active");
+  //   });
 
-    setTimeout(() => {
-      this.containerTargets.forEach((container) =>
-        container.classList.remove("active")
-      );
-      this.containerTargets[0].classList.add("active");
-    }, 1000);
+  //   setTimeout(() => {
+  //     this.containerTargets.forEach((container) =>
+  //       container.classList.remove("active")
+  //     );
+  //     this.containerTargets[0].classList.add("active");
+  //   }, 1000);
 
-    this.animateTicker();
-  }
+  //   this.animateTicker();
+  // }
 
-  animateTicker() {
-    this.element.style.animation = "none";
-    void this.element.offsetWidth;
-    this.element.style.animation = null;
-  }
+  // animateTicker() {
+  //   this.element.style.animation = "none";
+  //   void this.element.offsetWidth;
+  //   this.element.style.animation = null;
+  // }
 
-  get containerTargets() {
-    return this.targets.find("container");
-  }
+  // get containerTargets() {
+  //   return this.targets.find("container");
+  // }
 }
