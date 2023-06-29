@@ -4,7 +4,7 @@
   grid-gap: 40px;
   margin-bottom: 80px;
   margin-top: 60px;
-  padding: 0 3vw;
+  padding: 0 3vw 0 2vw;
 }
 
 .index-thumbs {
@@ -47,7 +47,7 @@
 
 .thumb-title {
   font-family: Replica;
-  font-size: 2vh;
+  font-size: 1vw;
   color: #e2e2e2;
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
@@ -82,7 +82,10 @@
     padding: 20px 40px;
    }
    .thumb-title-container{
-    right: -2.6vw;
+    right: -3vw;
+   }
+   .thumb-title {
+    font-size: 1.2vh;
    }
 }
 
@@ -91,9 +94,15 @@
   .index-projects
    {
     grid-template-columns: 1fr ;
-    padding: 2vh 7vw;
+    padding: 2vh 8vw;
    }
    .thumb-title-container{
-    right: -4vw;
+    right: -5.5vw;
    }
+}
+
+@media (min-width: 1400px) {
+  .index-projects{
+    margin-top: 100px;
+  }
 }
