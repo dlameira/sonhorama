@@ -8,28 +8,20 @@
   height: 40px;
   width: 100%;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
-
-// .news-ticker {
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
-  // width: max-content;
-  // height: 100%;
-  // background-color: transparent;
-  // overflow: hidden;
-// }
 
 .message-container {
   display: inline-block;
   white-space: nowrap;
-  animation: tickerAnimation 20s linear infinite;
-  animation-delay: -20s;
+  animation: tickerAnimation 40s linear infinite;
+  animation-delay: -40s;
 }
 
 .news-ticker div:nth-child(2) {
-  animation: tickerAnimation2 20s linear infinite;
-  animation-delay: -10s;
+  animation: tickerAnimation2 40s linear infinite;
+  animation-delay: -20s;
 }
 
 .ticker-content {
@@ -38,22 +30,25 @@
   text-transform: uppercase;
   font-weight: bold;
   margin: 0;
+  padding-top: 5px;
   white-space: nowrap;
-  // display: inline-block;
-  // animation: tickerAnimation 40s linear infinite;
+  line-height: 40px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
 // SONHORAMA STAR
 .ticker-star{
   color: #e2e2e2;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   display: inline-block;
-  // margin: 0 10px;
+  vertical-align: middle;
 }
 .ticker-content img {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  vertical-align: middle;
 }
 
 
@@ -77,9 +72,6 @@
     transform: translateX(-200%);
   }
 }
-
-
-
 
 
 // MEDIA QUERIES TO MOBILE

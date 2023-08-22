@@ -9,7 +9,7 @@
       <div data-project-id="<%= project.id %>" class="project-thumbs">
 
        <div class="thumb-title-container">
-          <p class="thumb-title"><%= project.title %> &nbsp &nbsp // &nbsp &nbsp <%= project.client %></p>
+          <p class="thumb-title"><%= project.client %> &nbsp &nbsp // &nbsp &nbsp <%= project.title %></p>
       </div>
 
         <%= link_to project_path(project), class: 'thumbs-projetinhos', id: "project-#{project.id}" do  %>
