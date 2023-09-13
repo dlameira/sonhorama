@@ -16,11 +16,12 @@
   }
 
   .slogan {
-    top: 3.8vh; // adjust this value according to your desired position
+    top: 3.8vh;
     width: 100%;
     text-align: center;
-    z-index: 1; // make sure the slogan is in front of the background image
+    z-index: 1;
     white-space: nowrap;
+    pointer-events: none;
     // margin-top: 2px;
 
     h1 {
@@ -35,6 +36,7 @@
       line-height: .8;
       display: inline-block;
       padding: 0;
+      pointer-events: none;
     }
   }
   img{
